@@ -19,7 +19,7 @@ jobs:
       - name: git checkout last version
         uses: action/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: AlexanderBend/5550055
       - name: test ls
         run: |
           ls -l
