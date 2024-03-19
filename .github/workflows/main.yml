@@ -1,0 +1,25 @@
+name: Upload site to staging server for tests
+
+on:
+#  push:
+  workflow_dispatch:
+env:
+  HOME: /home/usrgit
+
+jobs:
+  getrepo:
+  runs_on: self-hosted
+    steps:
+      - name: tar and clear old files
+        run: |
+          cd /var/www/
+          tar -cfvz ${{ env.HOME }}/site_old_$(date '+%Y-%m-%d').tar.gz 555 && \
+          rm -rf /var/www/555
+          
+      - name: git checkout last version
+        uses: action/checkout@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: test ls
+        run: |
+          ls -l
