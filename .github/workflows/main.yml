@@ -1,7 +1,7 @@
 name: Upload site to staging server for tests
 
 on:
-#  push:
+  push:
   workflow_dispatch:
 env:
   HOME: /home/${{ secrets.RUNNER_USERNAME }}
