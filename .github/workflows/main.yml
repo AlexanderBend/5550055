@@ -4,7 +4,7 @@ on:
 #  push:
   workflow_dispatch:
 env:
-  HOME: /home/usrgit
+  HOME: /home/${{ secrets.RUNNER_USERNAME }}
 
 jobs:
   getrepo:
