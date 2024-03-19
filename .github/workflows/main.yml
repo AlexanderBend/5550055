@@ -7,8 +7,8 @@ env:
   HOME: /home/${{ secrets.RUNNER_USERNAME }}
 
 jobs:
-  getrepo:
-  runs_on: self-hosted
+  job_1:
+    runs-on: self-hosted
     steps:
       - name: tar and clear old files
         run: |
