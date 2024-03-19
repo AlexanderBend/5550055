@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: tar and clear old files
         run: |
+          id
           cd /var/www/
           tar -cfvz ${{ env.HOME }}/site_old_$(date '+%Y-%m-%d').tar.gz 555 && \
           rm -rf /var/www/555
