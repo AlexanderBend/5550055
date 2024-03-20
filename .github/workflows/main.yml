@@ -20,9 +20,10 @@ jobs:
         
       - name: tar and clear old files
         run: |
-          tar -cfv ${{ env.HOME }}/site_old_$(date '+%Y-%m-%d').tar /var/www/555 && \
+          sudo tar -cfv ${{ env.HOME }}/site_old_$(date '+%Y-%m-%d').tar /var/www/555 && \
           sudo rm -rf /var/www/555
           
-      - name: test ls
+      - name: copy to www directory
         run: |
-          ls -l
+          sudo cp -r ./* /var/www/555/ && \
+          ls -la /var/www/555
