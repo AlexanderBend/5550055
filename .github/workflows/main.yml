@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: git checkout last version
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
         with:
           repository: AlexanderBend/5550055
           
