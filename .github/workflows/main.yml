@@ -1,7 +1,7 @@
 name: Upload site to staging server for tests
 
 on:
-#  push:
+  push:
   workflow_dispatch:
 env:
   HOME: /home/usrgit
@@ -20,7 +20,7 @@ jobs:
         
       - name: tar and clear old files
         run: |
-          sudo tar -cvf ${{ env.HOME }}/site_old_$(date '+%Y%m%d%H%M').tar /var/www/555 && \
+          sudo tar -cvzf ${{ env.HOME }}/site_old_$(date '+%Y%m%d%H%M').tar.gz /var/www/555 && \
           sudo rm -rf /var/www/555/*
           
       - name: copy to www directory
